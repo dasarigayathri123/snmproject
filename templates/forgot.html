@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email confirmation</title>
+    <style>
+        body {
+            margin-top: 13%;
+            background-color: rgb(29, 35, 88);
+        }
+
+        label {
+            font-size: 20px;
+            color: white;
+        }
+
+        input {
+            padding: 8px;
+            width: 20%;
+            border-radius: 15px;
+            border: aqua solid 2px;
+        }
+
+        button {
+            border-radius: 10px;
+            padding: 8px;
+            width: 7%;
+            color: blue;
+            font-weight: bold;
+            border: aqua solid 2px;
+        }
+
+        button:hover {
+            background: aqua;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+<center>{{ message }}</center>
+{% endfor %}
+
+{% endif %}
+{% endwith %}
+
+<body>
+    <center>
+        <form action="" method="post">
+            <label>Enter Your Email: </label><br>
+            <input type="email" name="email" placeholder="enter email" name=""><br><br>
+            <a href=""><button>Submit</button></a>
+
+        </form>
+
+    </center>
+</body>
+
+</html>
